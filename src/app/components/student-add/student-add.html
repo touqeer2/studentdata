@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow rounded-4 border-0">
+        <div class="card-header bg-success text-white text-center rounded-top-4">
+          <h4 class="mb-0">➕ Add Student</h4>
+        </div>
+        <div class="card-body bg-light">
+          <form (ngSubmit)="addStudent()" #studentForm="ngForm" autocomplete="off">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">👤 Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="student.name"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">🎂 Age:</label>
+              <input
+                type="number"
+                class="form-control"
+                [(ngModel)]="student.age"
+                name="age"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">📧 Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                [(ngModel)]="student.email"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-primary px-4" type="submit">
+                💾 Add Student
+              </button>
+              <button class="btn btn-outline-secondary px-4" routerLink="/">
+                ❌ Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

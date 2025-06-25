@@ -1,0 +1,28 @@
+<div class="container mt-3">
+  <h2>Student List</h2>
+  <button class="btn btn-success mb-3" routerLink="/add">Add Student</button>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.email }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm me-2" (click)="editStudent(student.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
